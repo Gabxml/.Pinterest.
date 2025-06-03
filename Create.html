@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Pin</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="Gnarly\plogo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <nav class="navbar pnav">
+                <div class="navdiv flex">
+
+                    <p class="glogo"><img class="glogo" src="Gnarly\plogo.png" alt="Logo"></p>
+                    <a href="Home.html">
+                        <p class="board awesome"><i class="fa-solid fa-house"></i></p>
+                    </a>
+                    <a href="#">
+                        <p class="board awesome"><i class="fa-solid fa-compass"></i></p>
+                    </a>
+                    <a href="#">
+                        <p class="board awesome"><i class="fa-solid fa-bell"></i></p>
+                    </a>
+                    <a href="#">
+                        <p class="board awesome"><i class="fa-solid fa-envelope"></i></p>
+                    </a>
+
+
+                    <input type="text" placeholder="Search" class="search">
+                    <a href="#">
+                        <p class="board awesome"><i class="fa-solid fa-gear"></i></p>
+                    </a>
+
+                    <a href="Create.html">
+                        <p class="board bselected awesome"><i class="fa-solid fa-plus"></i></p>
+                    </a>
+                    <a href="Profile.html">
+                        <p class="board awesome"><i class="fa-solid fa-user"></i></p>
+                    </a>
+                </div>
+            </nav>
+        </thead>
+        <tbody>
+            <div class="createblock">
+                <div class="cbcontent1 flex">
+                    <p class="cbc1">Create Pin</p>
+                    <a href="#">
+                        <p class="cbc2">Publish</p>
+                    </a>
+                </div>
+                <div class="cbcontent2 flex">
+                    <div class="create1">
+                        <input type="file" id="fileUpload" class="file-input" accept="image/*">
+
+                        <label for="fileUpload" class="custom-file-label">
+                            <div id="uploadPrompt">
+                                <p class="cicon"><i class="fa-solid fa-cloud-arrow-up"></i></p>
+                                <p class="ctext1">Choose a file or drag and drop it here</p>
+                                <p class="ctext2">We recommend using high quality .jpg files less than 20 MB or .mp4
+                                    files less than 200 MB</p>
+                            </div>
+                            <img id="preview"
+                                style="display: none; width: 100%; height: 100%; object-fit: contain; border-radius: 10px;"
+                                alt="Image preview">
+                        </label>
+
+                        <a href="#">
+                            <p class="ctext3">Save from URL</p>
+                        </a>
+                        <div id="file-name"></div>
+                    </div>
+
+                    <div>
+                        <p class="cdesc">Title</p>
+                        <input type="text" placeholder="Add a title" class="ctitle"><br>
+                        <p class="cdesc">Description</p>
+                        <input type="text" placeholder="Add a detailed description" class="ctitle"
+                            style="height: 100px;"><br>
+                        <p class="cdesc">Link</p>
+                        <input type="text" placeholder="Add a link" class="ctitle"><br>
+                        <p class="cdesc">Board</p>
+                        <input type="text" placeholder="Choose a board" class="ctitle"><br>
+                        <p class="cdesc">Tagged topics (0)</p>
+                        <input type="text" placeholder="Search for a tag" class="ctitle"><br>
+                        <p class="cdesc" style="margin-bottom: 20px; margin-top: -20px; font-size: 13px;">Don't worry,
+                            people won't see
+                            your tags</p>
+
+                        <p class="cdesc" style="margin-bottom: 5px; margin-left: 25px; font-size: 15px;">Tag products
+                        </p>
+                        <a href="#">
+                            <p class="ctext4">Add Products</p>
+                        </a>
+
+                        <p class="ctext3" id="moreOptionsBtn" style="background-color: #ffffff;">More Options</p>
+
+                        <div id="moreOptionsSection" style="display: none;">
+                            <p class="cdesc" style="margin-bottom: -10px; margin-left: 5px;">Allow people to comment</p>
+                            <br>
+                            <label class="switch">
+                                <input type="checkbox" id="toggle1">
+                                <span class="slider"></span>
+                            </label><br><br>
+
+                            <p class="cdesc" style="margin-bottom: -10px; margin-left: 5px;">Show similar products</p>
+                            <br>
+                            <label class="switch">
+                                <input type="checkbox" id="toggle2">
+                                <span class="slider"></span>
+                            </label><br><br>
+
+                            <pre class="cdesc" style="font-size: 13px; margin-bottom: 5px; margin-left: 5px;">
+People can shop products similar to what's shown in this Pin using visual search
+Shopping recommendations aren't available for Idea ads and Pins with tagged
+products or paid partnership label
+                            </pre><br>
+
+                            <p class="cdesc" style="margin-bottom: -40px; margin-left: 5px;">Extra Input</p><br>
+                            <input type="text" placeholder="Describe your Pin's visual details"
+                                style="font-family: 'Buda', serif; font-size: 15px; width: 500px; height: 50px; margin: 25px; border-radius: 10px; padding-top: 0; border: 1px solid #ccc; margin-left: 0;">
+                            <p class="cdesc" style="margin-bottom: 20px; margin-top: -20px; font-size: 13px; margin-left: 0;">This helps people using screen readers understand what your Pin is about</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tbody>
+    </table>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+    <script src="structure.js"></script>
+
+
+</body>
+
+</html>
